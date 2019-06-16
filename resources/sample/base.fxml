@@ -9,6 +9,6 @@
 
 <StackPane fx:controller="sample.control.JanelaBase"
            xmlns:fx="http://javafx.com/fxml" alignment="center"
-           fx:id="painelBase">
+           fx:id="janelaBase">
 
 </StackPane>

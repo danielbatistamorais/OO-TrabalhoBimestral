@@ -7,13 +7,15 @@ public class Jogador implements Serializable{
     private int codigo;
     private String nome;
     private int maiorPontuacao;
+    private String senha;
     private LocalDateTime ultimaJogada;
 
-    public Jogador(int codigo, String nome, int maiorPontuacao, LocalDateTime ultimaJogada) {
+    public Jogador(int codigo, String nome, int maiorPontuacao, LocalDateTime ultimaJogada, String senha) {
         this.codigo = codigo;
         this.nome = nome;
         this.maiorPontuacao = maiorPontuacao;
         this.ultimaJogada = ultimaJogada;
+        this.senha = senha;
     }
 
     public int getCodigo() {

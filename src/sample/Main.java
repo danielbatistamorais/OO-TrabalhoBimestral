@@ -4,17 +4,37 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import sample.control.JanelaBase;
 
-public class Main extends Application{
+import java.io.IOException;
 
-    @Override
-    public void start(Stage primaryStage) throws Exception{
+public class Main extends Application {
 
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/telaInicial.fxml"));
-        primaryStage.setTitle("QUIZ");
-        primaryStage.setScene(new Scene(root, 800, 500));
-        primaryStage.show();
+    public void start(Stage stage) throws Exception {
 
+        Pane root = loadMainPane();
+        stage.setScene(new Scene(root, 800, 600));
+
+        stage.setTitle("QUIZ");
+        stage.show();
+    }
+
+    private Pane loadMainPane() throws IOException {
+        FXMLLoader loader = new FXMLLoader();
+
+        Pane mainPane = (Pane) loader.load(
+                getClass().getResourceAsStream(
+                        Navegador.BASE
+                )
+        );
+
+        JanelaBase controller = loader.getController();
+
+        Navegador.setControlador(controller);
+        Navegador.loadJanela(Navegador.JANELA_INICIAL);
+
+        return mainPane;
     }
 }

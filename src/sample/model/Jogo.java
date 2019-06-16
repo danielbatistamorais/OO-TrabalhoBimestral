@@ -16,4 +16,10 @@ public class Jogo {
     public static Jogo getInstance(){
         return instance;
     }
+
+    public void cadastrarJogador(Jogador j){
+        jogadores.add(j);
+    }
+
+
 }

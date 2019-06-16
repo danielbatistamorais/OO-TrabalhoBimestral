@@ -1,13 +1,28 @@
 package sample.control;
 
 import javafx.fxml.FXML;
+import sample.Navegador;
+import sample.model.Jogador;
+import javafx.scene.control.TextField;
+import sample.model.Jogo;
 
 public class TelaInicial {
-
+    @FXML
+    private TextField tfNome;
 
     @FXML
-    private void cadastro(){}
+    private TextField tfSenha;
 
     @FXML
-    private void login(){}
+    private void acaoCadastrar(){
+        String nome = tfNome.getText();
+        String senha = tfSenha.getText();
+
+        Jogador jogador = new Jogador(0, nome, 0, null, senha);
+
+        Jogo.getInstance().cadastrarJogador(jogador);
+        System.out.println(Jogo.getInstance());
+
+        Navegador.loadJanela(Navegador.MENU_JOGO);
+    }
 }

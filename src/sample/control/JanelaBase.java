@@ -7,10 +7,10 @@ import javafx.scene.layout.StackPane;
 public class JanelaBase {
 
     @FXML
-    private StackPane painelBase;
+    private StackPane janelaBase;
 
     public void setJanela(Node node){
-        painelBase.getChildren().setAll(node);
+        janelaBase.getChildren().setAll(node);
     }
 
 }

@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import sample.control.JanelaBase;
+import sample.model.Jogo;
 
 import java.io.IOException;
 
@@ -36,5 +37,16 @@ public class Principal extends Application {
         Navegador.loadJanela(Navegador.JANELA_INICIAL);
 
         return mainPane;
+    }
+
+    @Override
+    public void init() throws Exception {
+        super.init();
+        try{
+            Jogo.getInstance().carregaJogadores();
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
     }
 }

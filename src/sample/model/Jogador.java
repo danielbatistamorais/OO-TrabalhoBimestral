@@ -47,4 +47,14 @@ public class Jogador implements Serializable{
     public void setUltimaJogada(LocalDateTime ultimaJogada) {
         this.ultimaJogada = ultimaJogada;
     }
+
+    @Override
+    public String toString() {
+        return "Jogador{" +
+                "codigo=" + codigo +
+                ", nome='" + nome + '\'' +
+                ", maiorPontuacao=" + maiorPontuacao +
+                ", ultimaJogada=" + ultimaJogada +
+                '}';
+    }
 }

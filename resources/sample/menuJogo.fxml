@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Separator?>
@@ -11,8 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.3996655518394649" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.MenuJogo"
-stylesheets="/css/base.css" styleClass="root">
+<SplitPane dividerPositions="0.3996655518394649" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="/css/base.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.MenuJogo">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -44,21 +44,17 @@ stylesheets="/css/base.css" styleClass="root">
                   <Cursor fx:constant="N_RESIZE" />
                </cursor>
             </Separator>
-            <Button layoutX="83.0" layoutY="45.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="207.0" text="Jogar">
+            <Button layoutX="74.0" layoutY="46.0" mnemonicParsing="false" onAction="#acaoJogar" prefHeight="60.0" prefWidth="207.0" text="Jogar">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Button>
-            <Button layoutX="82.0" layoutY="113.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="207.0" text="Configuraçoes">
+            <Button layoutX="74.0" layoutY="188.0" mnemonicParsing="false" onAction="#acaoDeslogar" prefHeight="60.0" prefWidth="207.0" text="Deslogar">
                <font>
                   <Font name="System Bold" size="21.0" />
                </font>
             </Button>
-            <Button layoutX="83.0" layoutY="181.0" mnemonicParsing="false" onAction="#acaoDeslogar" prefHeight="60.0" prefWidth="207.0" text="Deslogar">
-               <font>
-                  <Font name="System Bold" size="21.0" />
-               </font>
-            </Button>
+            <ComboBox layoutX="74.0" layoutY="117.0" prefHeight="60.0" prefWidth="207.0" />
          </children></AnchorPane>
   </items>
 </SplitPane>

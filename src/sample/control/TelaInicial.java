@@ -14,13 +14,10 @@ public class TelaInicial {
     @FXML
     private void acaoCadastrar(){
         String nome = tfNome.getText();
-        System.out.println(nome);
-        System.out.println(tfNome.getText());
 
         if(nome.length() > 0 ){
             Jogador jogador = new Jogador(0, nome, 0, null);
             Jogo.getInstance().cadastrarJogador(jogador);
-            System.out.println(Jogo.getInstance());
 
             Navegador.loadJanela(Navegador.MENU_JOGO);
         }

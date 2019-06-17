@@ -1,5 +1,6 @@
 package sample.control;
 
+import com.sun.prism.null3d.NULL3DPipeline;
 import javafx.fxml.FXML;
 import sample.Navegador;
 import sample.model.Jogador;
@@ -11,17 +12,20 @@ public class TelaInicial {
     private TextField tfNome;
 
     @FXML
-    private TextField tfSenha;
-
-    @FXML
     private void acaoCadastrar(){
         String nome = tfNome.getText();
+        System.out.println(nome);
+        System.out.println(tfNome.getText());
 
-        Jogador jogador = new Jogador(0, nome, 0, null);
+        if(nome.length() > 0 ){
+            Jogador jogador = new Jogador(0, nome, 0, null);
+            Jogo.getInstance().cadastrarJogador(jogador);
+            System.out.println(Jogo.getInstance());
 
-        Jogo.getInstance().cadastrarJogador(jogador);
-        System.out.println(Jogo.getInstance());
-
-        Navegador.loadJanela(Navegador.MENU_JOGO);
+            Navegador.loadJanela(Navegador.MENU_JOGO);
+        }
+        else{
+            Navegador.loadJanela(Navegador.JANELA_INICIAL);
+        }
     }
 }

@@ -1,0 +1,14 @@
+2 //aqui é a quantidade de perguntas que contém no arquivo
+4 //aqui é a quantidade de opções para cada pergunta, deve ser no mínimo 3
+Aqui começa a pergunta 1, com o enunciado dela toda em uma única linha.
+Opcao 1
+Opcao 2
+Opcao 3
+Opcao 4
+1 //aqui é indicada qual a opção correta
+Aqui começa a pergunta 2, com o enunciado dela toda em uma única linha.
+Opcao 1
+Opcao 2
+Opcao 3
+Opcao 4
+3 //aqui é indicada qual a opção correta

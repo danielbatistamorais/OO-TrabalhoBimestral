@@ -21,9 +21,8 @@ public class Navegador{
 
     public static void loadJanela(String fxml) {
         try {
-            controlador.setJanela(
-                    (Node) FXMLLoader.load(
-                            Navegador.class.getResource(
+            controlador.setJanela((Node) FXMLLoader.load(
+                    Navegador.class.getResource(
                                     fxml
                             )
                     )

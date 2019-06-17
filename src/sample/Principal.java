@@ -15,7 +15,7 @@ public class Principal extends Application {
     public void start(Stage stage) throws Exception {
 
         Pane root = loadMainPane();
-        stage.setScene(new Scene(root, 800, 600));
+        stage.setScene(new Scene(root, 600, 400));
 
         stage.setTitle("QUIZ");
         stage.show();

@@ -36,4 +36,13 @@ public class Pergunta {
     public void setCorreta(int correta) {
         this.correta = correta;
     }
+
+    @Override
+    public String toString() {
+        return "Pergunta{" +
+                "enunciado='" + enunciado + '\'' +
+                ", opcoes=" + opcoes +
+                ", correta=" + correta +
+                '}';
+    }
 }

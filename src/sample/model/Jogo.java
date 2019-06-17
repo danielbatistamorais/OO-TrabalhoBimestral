@@ -1,18 +1,18 @@
 package sample.model;
 
-import com.sun.org.apache.xpath.internal.SourceTree;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Jogo {
 
     private static String FILE="jogadores.bin";
+    private static String FILE_PERGUNTAS="perguntas.txt";
+
 
     private ObservableSet<Jogador> jogadores;
     private ObservableList<Pergunta> perguntas;
@@ -30,34 +30,32 @@ public class Jogo {
 
     public void cadastrarJogador(Jogador j){
         jogadores.add(j);
-        carregaPerguntas();
     }
 
     public void carregaPerguntas(){
-        File f = new File("perguntas.txt");
-
         ArrayList<Pergunta> aux = new ArrayList<>();
 
         String enunciado;
         ArrayList<String> opcoes = new ArrayList<>();
         int correta;
 
-        int numPerguntas, rand1 = 1, numOpcoes;
+        int numPerguntas, rand1 = 0, numOpcoes;
         ////ADICIONAR RAND DE 8 NÚMEROS QUE CORRESPONDEM AS PERGUNTAS
 
-        try(Scanner scan = new Scanner (f);){
+        try(FileReader f = new FileReader(FILE_PERGUNTAS);
+                BufferedReader br = new BufferedReader(f)){
 
-            numPerguntas = Integer.valueOf(scan.nextLine());
-            numOpcoes= Integer.valueOf(scan.nextLine());
+            numPerguntas = Integer.valueOf(br.readLine());
+            numOpcoes= Integer.valueOf(br.readLine());
 
             for(int i =0; i<numPerguntas;i++){
                 opcoes.clear();
 
-                enunciado = scan.nextLine();
+                enunciado = br.readLine();
                 for(int j = 0; j<numOpcoes; j++){
-                    opcoes.add(scan.nextLine());
+                    opcoes.add(br.readLine());
                 }
-                correta = Integer.valueOf(scan.nextLine());
+                correta = Integer.valueOf(br.readLine());
 
                 Pergunta p = new Pergunta(enunciado, opcoes,correta);
 
@@ -76,6 +74,10 @@ public class Jogo {
         }
         catch (IOException e){
             System.out.println(e);
+        }
+
+        for(Pergunta p: perguntas){
+            System.out.println(p.toString());
         }
     }
 

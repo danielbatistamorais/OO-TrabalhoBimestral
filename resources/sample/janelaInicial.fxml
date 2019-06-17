@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.TelaInicial">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.TelaInicial">
    <children>
       <TextField fx:id="tfNome" layoutX="133.0" layoutY="90.0" maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="61.0" prefWidth="435.0">
          <font>
@@ -28,11 +28,6 @@
          </font>
       </TextField>
       <Button layoutX="133.0" layoutY="250.0" mnemonicParsing="false" onAction="#acaoCadastrar" prefHeight="60.0" prefWidth="160.0" text="Cadastro">
-         <font>
-            <Font size="25.0" />
-         </font>
-      </Button>
-      <Button layoutX="306.0" layoutY="250.0" mnemonicParsing="false" onAction="#acaoLogar" prefHeight="60.0" prefWidth="160.0" text="Login">
          <font>
             <Font size="25.0" />
          </font>

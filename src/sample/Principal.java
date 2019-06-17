@@ -10,7 +10,7 @@ import sample.control.JanelaBase;
 
 import java.io.IOException;
 
-public class Main extends Application {
+public class Principal extends Application {
 
     public void start(Stage stage) throws Exception {
 

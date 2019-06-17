@@ -16,9 +16,8 @@ public class TelaInicial {
     @FXML
     private void acaoCadastrar(){
         String nome = tfNome.getText();
-        String senha = tfSenha.getText();
 
-        Jogador jogador = new Jogador(0, nome, 0, null, senha);
+        Jogador jogador = new Jogador(0, nome, 0, null);
 
         Jogo.getInstance().cadastrarJogador(jogador);
         System.out.println(Jogo.getInstance());

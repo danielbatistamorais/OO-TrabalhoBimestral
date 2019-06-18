@@ -1,5 +1,6 @@
 package sample.model;
 
+import java.util.Random;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.ObservableSet;
@@ -11,17 +12,17 @@ import java.util.Scanner;
 public class Jogo {
 
     private static String FILE="jogadores.bin";
-    private static String FILE_PERGUNTAS="perguntas.txt";
+    private static String FILE_PERGUNTAS="Geografia.txt";
 
 
     private ObservableSet<Jogador> jogadores;
-    private ObservableList<Pergunta> perguntas;
+    private ObservableSet<Pergunta> perguntas;
 
     private static Jogo instance = new Jogo();
 
     private Jogo(){
         jogadores = FXCollections.observableSet();
-        perguntas = FXCollections.observableArrayList();
+        perguntas = FXCollections.observableSet();
     }
 
     public static Jogo getInstance(){
@@ -35,12 +36,16 @@ public class Jogo {
     public void carregaPerguntas(){
         ArrayList<Pergunta> aux = new ArrayList<>();
 
+        //randomizer//
+        Random random = new Random();
+        //////////////
+
         String enunciado;
+
         ArrayList<String> opcoes = new ArrayList<>();
         int correta;
 
-        int numPerguntas, rand1 = 0, numOpcoes;
-        ////ADICIONAR RAND DE 8 NÚMEROS QUE CORRESPONDEM AS PERGUNTAS
+        int numPerguntas, rand, numOpcoes;
 
         try(FileReader f = new FileReader(FILE_PERGUNTAS);
                 BufferedReader br = new BufferedReader(f)){
@@ -55,6 +60,7 @@ public class Jogo {
                 for(int j = 0; j<numOpcoes; j++){
                     opcoes.add(br.readLine());
                 }
+
                 correta = Integer.valueOf(br.readLine());
 
                 Pergunta p = new Pergunta(enunciado, opcoes,correta);
@@ -63,22 +69,20 @@ public class Jogo {
             }
 
             do{
-                for(int j=0; j<numPerguntas; j++){
+                rand = random.nextInt(numPerguntas);
 
-                    if(j == rand1){
+                for(int j=0; j<numPerguntas; j++){
+                    if(j == rand){
                         perguntas.add(aux.get(j));
                     }
                 }
 
-            }while(perguntas.size()<1);
+            }while(perguntas.size()<8);
         }
         catch (IOException e){
             System.out.println(e);
         }
 
-        for(Pergunta p: perguntas){
-            System.out.println(p.toString());
-        }
     }
 
 

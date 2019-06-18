@@ -42,7 +42,7 @@ public class Jogo {
 
         String enunciado;
 
-        ArrayList<String> opcoes = new ArrayList<>();
+
         int correta;
 
         int numPerguntas, rand, numOpcoes;
@@ -54,7 +54,8 @@ public class Jogo {
             numOpcoes= Integer.valueOf(br.readLine());
 
             for(int i =0; i<numPerguntas;i++){
-                opcoes.clear();
+                ArrayList<String> opcoes = new ArrayList<>();
+
 
                 enunciado = br.readLine();
                 for(int j = 0; j<numOpcoes; j++){
@@ -69,13 +70,14 @@ public class Jogo {
             }
 
             do{
-                rand = random.nextInt(numPerguntas);
-
                 for(int j=0; j<numPerguntas; j++){
+                    rand = random.nextInt(numPerguntas);
                     if(j == rand){
                         perguntas.add(aux.get(j));
+
                     }
                 }
+                System.out.println(perguntas);
 
             }while(perguntas.size()<8);
         }

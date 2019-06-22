@@ -12,12 +12,4 @@ import java.util.ArrayList;
 
 public class Telajogo {
 
-    @FXML
-    private ListView<Pergunta> ltvOpcao;
-
-    @FXML
-    public void acaoMostrar(){
-
-
-    }
 }

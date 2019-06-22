@@ -1,6 +1,6 @@
 package sample.control;
 
-import com.sun.prism.null3d.NULL3DPipeline;
+
 import javafx.fxml.FXML;
 import sample.Navegador;
 import sample.model.Jogador;

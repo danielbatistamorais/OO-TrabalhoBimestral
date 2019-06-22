@@ -18,5 +18,6 @@ public class MenuJogo {
 
     @FXML
     public void acaoJogar(ActionEvent actionEvent) {
+        Navegador.loadJanela(Navegador.TELA_JOGO);
     }
 }

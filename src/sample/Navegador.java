@@ -12,6 +12,7 @@ public class Navegador{
     public static final String BASE    = "/sample/base.fxml";
     public static final String JANELA_INICIAL    = "/sample/janelaInicial.fxml";
     public static final String MENU_JOGO = "/sample/menuJogo.fxml";
+    public static final String TELA_JOGO = "/sample/Telajogo.fxml";
 
     private static JanelaBase controlador;
 

@@ -77,9 +77,10 @@ public class Jogo {
 
                     }
                 }
-                System.out.println(perguntas);
+
 
             }while(perguntas.size()<8);
+            System.out.println(perguntas);
         }
         catch (IOException e){
             System.out.println(e);

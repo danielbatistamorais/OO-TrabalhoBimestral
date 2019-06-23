@@ -1,28 +1,63 @@
 package sample.model;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Random;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.collections.ObservableSet;
+import sample.control.Avisos;
+import sample.control.MenuJogo;
+import sample.control.TelaInicial;
 
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Scanner;
 
-public class Jogo {
+public class Jogo extends Avisos {
 
     private static String FILE="jogadores.bin";
     private static String FILE_PERGUNTAS="Geografia.txt";
 
+    private ObservableList<Jogador> jogadores;
+    private ObservableList<Pergunta> perguntas;
+    private Jogador jogadorLogado;
+    private int pontuacao = 0;
 
-    private ObservableSet<Jogador> jogadores;
-    private ObservableSet<Pergunta> perguntas;
 
     private static Jogo instance = new Jogo();
 
+    public void  finalizaPartida() {
+
+        if(jogadorLogado.getMaiorPontuacao() < pontuacao){
+            jogadorLogado.setMaiorPontuacao(pontuacao);
+        }
+
+        Date ultimaJogada = Jogo.getInstance().getJogadorLogado().getUltimaJogada();
+        jogadorLogado.setUltimaJogada(ultimaJogada);
+        pontuacao = 0;
+
+    }
+
+    public ObservableList<Pergunta> getPerguntas() {
+        return perguntas;
+    }
+
+    public int getPontuacao() {
+        return pontuacao;
+    }
+
+    public Jogador getJogadorLogado() {
+        return jogadorLogado;
+    }
+
+    public void setJogadorLogado(Jogador jogadorLogado) {
+        this.jogadorLogado = jogadorLogado;
+    }
+
     private Jogo(){
-        jogadores = FXCollections.observableSet();
-        perguntas = FXCollections.observableSet();
+        jogadores = FXCollections.observableArrayList();
+        perguntas = FXCollections.observableArrayList();
+
     }
 
     public static Jogo getInstance(){
@@ -30,6 +65,8 @@ public class Jogo {
     }
 
     public void cadastrarJogador(Jogador j){
+
+        jogadorLogado = j;
         jogadores.add(j);
     }
 
@@ -73,8 +110,10 @@ public class Jogo {
                 for(int j=0; j<numPerguntas; j++){
                     rand = random.nextInt(numPerguntas);
                     if(j == rand){
-                        perguntas.add(aux.get(j));
+                        if(!perguntas.contains(aux.get(j))){
+                            perguntas.add(aux.get(j));
 
+                        }
                     }
                 }
 
@@ -101,6 +140,10 @@ public class Jogo {
         ArrayList<Jogador> temp = (ArrayList)ois.readObject();
 
         jogadores.addAll(temp);
+
+        for(Jogador j:jogadores){
+            System.out.println(j.toString());
+        }
         ois.close();
     }
 
@@ -116,5 +159,27 @@ public class Jogo {
         oos.writeObject(temp);
 
         oos.close();
+    }
+
+    public void marcaPontos(int verifica){
+        if(verifica == 1){
+            pontuacao = pontuacao+3;
+            avisoAcerto();
+        }
+        else if(verifica == 2){
+            pontuacao = pontuacao-1;
+            avisoErro();
+        }
+    }
+
+    public boolean verificaJogadores(String nome){
+        for(Jogador j: jogadores){
+            if(j.getNome().equals(nome)){
+                jogadorLogado = j;
+                return true;
+            }
+        }
+
+        return false;
     }
 }

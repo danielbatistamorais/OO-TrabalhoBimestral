@@ -1,15 +1,16 @@
 package sample.model;
 
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Jogador implements Serializable{
     private int codigo;
     private String nome;
     private int maiorPontuacao;
-    private LocalDateTime ultimaJogada;
+    private Date ultimaJogada;
 
-    public Jogador(int codigo, String nome, int maiorPontuacao, LocalDateTime ultimaJogada) {
+    public Jogador(int codigo, String nome, int maiorPontuacao, Date ultimaJogada) {
         this.codigo = codigo;
         this.nome = nome;
         this.maiorPontuacao = maiorPontuacao;
@@ -40,11 +41,12 @@ public class Jogador implements Serializable{
         this.maiorPontuacao = maiorPontuacao;
     }
 
-    public LocalDateTime getUltimaJogada() {
+    public Date getUltimaJogada() {
         return ultimaJogada;
     }
 
-    public void setUltimaJogada(LocalDateTime ultimaJogada) {
+    public void setUltimaJogada(Date ultimaJogada) {
+
         this.ultimaJogada = ultimaJogada;
     }
 

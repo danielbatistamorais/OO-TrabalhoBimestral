@@ -16,10 +16,18 @@ public class TelaInicial {
         String nome = tfNome.getText();
 
         if(nome.length() > 0 ){
-            Jogador jogador = new Jogador(0, nome, 0, null);
-            Jogo.getInstance().cadastrarJogador(jogador);
 
-            Navegador.loadJanela(Navegador.MENU_JOGO);
+            if(!Jogo.getInstance().verificaJogadores(nome)){
+
+                Jogador jogador = new Jogador(0, nome, 0, null);
+                Jogo.getInstance().cadastrarJogador(jogador);
+
+                Navegador.loadJanela(Navegador.MENU_JOGO);
+            }
+            else{
+                Navegador.loadJanela(Navegador.MENU_JOGO);
+            }
+
         }
         else{
             Navegador.loadJanela(Navegador.JANELA_INICIAL);

@@ -44,8 +44,6 @@ public class Principal extends Application {
         super.init();
         try{
             Jogo.getInstance().carregaJogadores();
-            Jogo.getInstance().carregaPerguntas();
-
         }
         catch(Exception e){
             System.out.println(e);

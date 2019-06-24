@@ -27,14 +27,14 @@ public class MenuJogo extends Avisos {
 
 
     public void initialize(){
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date ultimaJogada = Jogo.getInstance().getJogadorLogado().getUltimaJogada();
+        DateFormat ultimaJogada = new SimpleDateFormat("dd/MM/yyyy");
+        Date data = Jogo.getInstance().getJogadorLogado().getUltimaJogada();
 
         if(ultimaJogada == null){
             lbUltimaJogada.setText("00/00/0000");
         }
         else{
-            lbUltimaJogada.setText(String.valueOf(ultimaJogada));
+            lbUltimaJogada.setText(ultimaJogada.format(data));
         }
         ltvRanking.getItems().addAll(Jogo.getInstance().getJogador());
     }

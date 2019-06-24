@@ -34,16 +34,19 @@ public class Jogo extends Avisos {
             jogadorLogado.setMaiorPontuacao(pontuacao);
         }
 
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date ultimaJogada = new Date();
+        DateFormat ultimaJogada = new SimpleDateFormat("dd/MM/yyyy");
+
+        Date data = new Date();
+
+        ultimaJogada.format(data);
 
         for (Jogador j:jogadores) {
             if(j.equals(jogadorLogado)){
-                j.setUltimaJogada(ultimaJogada);
+                j.setUltimaJogada(data);
             }
         }
 
-        jogadorLogado.setUltimaJogada(ultimaJogada);
+        jogadorLogado.setUltimaJogada(data);
         pontuacao = 0;
 
         salvarJogadores();
@@ -147,7 +150,7 @@ public class Jogo extends Avisos {
 
 
             }while(perguntas.size()<8);
-            System.out.println(perguntas);
+
         }
         catch (IOException e){
             System.out.println(e);
@@ -169,9 +172,6 @@ public class Jogo extends Avisos {
 
         jogadores.addAll(temp);
 
-        for(Jogador j:jogadores){
-            System.out.println(j.toString());
-        }
         ois.close();
     }
 

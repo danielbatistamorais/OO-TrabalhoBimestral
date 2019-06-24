@@ -57,4 +57,15 @@ public class Avisos {
         if(resultado.isPresent() && resultado.get() == ButtonType.OK){
 
         }
-    }}
+    }
+
+    protected void avisoSelecionarResposta(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"SELECIONE UMA OPÇÃO");
+
+        Optional<ButtonType> resultado = alert.showAndWait();
+
+        if(resultado.isPresent() && resultado.get() == ButtonType.OK){
+
+        }
+    }
+}

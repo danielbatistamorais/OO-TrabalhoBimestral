@@ -97,24 +97,31 @@ public class TelaJogo  extends Avisos{
 
     @FXML
     public void acaoConfirmar(ActionEvent actionEvent) throws IOException{
-        if(selecionaResposta() == perguntas.get(cont).getCorreta()){
-            Jogo.getInstance().marcaPontos(1);
 
-        }
-        else if(selecionaResposta() != perguntas.get(cont).getCorreta()){
-            Jogo.getInstance().marcaPontos(2);
-        }
-        cont++;
-        questoesRespondidas++;
+        if(rbOpcaoA.isSelected() || rbOpcaoB.isSelected()|| rbOpcaoC.isSelected() || rbOpcaoD.isSelected()){
+            if(selecionaResposta() == perguntas.get(cont).getCorreta()){
+                Jogo.getInstance().marcaPontos(1);
 
-        if(questoesRespondidas <5){
-            carregaTela(perguntas.get(cont));
+            }
+            else if(selecionaResposta() != perguntas.get(cont).getCorreta()){
+                Jogo.getInstance().marcaPontos(2);
+            }
+            cont++;
+            questoesRespondidas++;
+
+            if(questoesRespondidas <5){
+                carregaTela(perguntas.get(cont));
+            }
+            else{
+
+                Jogo.getInstance().finalizaPartida();
+                alertaFimDeJogo();
+                Navegador.loadJanela(Navegador.MENU_JOGO);
+            }
         }
         else{
-
-            Jogo.getInstance().finalizaPartida();
-            alertaFimDeJogo();
-            Navegador.loadJanela(Navegador.MENU_JOGO);
+            avisoSelecionarResposta();
         }
+
     }
 }

@@ -50,7 +50,7 @@ public class MenuJogo extends Avisos {
 
         String dificuldade = String.valueOf(cbDificuldade.getSelectionModel().getSelectedItem());
 
-        if(dificuldade.equals(" ")){
+        if(dificuldade.equals("Dificuldade")){
             ErroDificuldade();
         }
         else{

@@ -13,7 +13,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<SplitPane dividerPositions="0.3996655518394649" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="/css/base.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.MenuJogo">
+<SplitPane dividerPositions="0.3996655518394649" maxHeight="-Infinity" maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"
+           styleClass="root" stylesheets="/css/base.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.MenuJogo">
   <items>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
          <children>
@@ -55,7 +57,7 @@
                </font>
             </Button>
 
-            <ComboBox fx:id="cbDificuldade" layoutX="74.0" layoutY="117.0" prefHeight="60.0" prefWidth="207.0">
+            <ComboBox styleClass="font" stylesheets="/css/base.css" fx:id="cbDificuldade" layoutX="74.0" layoutY="117.0" prefHeight="60.0" prefWidth="207.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="Fácil" />

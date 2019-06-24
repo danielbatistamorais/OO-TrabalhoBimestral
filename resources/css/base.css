@@ -1,3 +1,7 @@
 .root{
     -fx-background-image: url("/image/Fundo.png");
 }
+
+.font{
+    -fx-font-size: 21px;
+}

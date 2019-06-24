@@ -47,4 +47,14 @@ public class Avisos {
 
         }
     }
-}
+
+
+    protected void avisoPulos(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION,"QUANTIDADE DE PULOS EXCEDIDA");
+
+        Optional<ButtonType> resultado = alert.showAndWait();
+
+        if(resultado.isPresent() && resultado.get() == ButtonType.OK){
+
+        }
+    }}

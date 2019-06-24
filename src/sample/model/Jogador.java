@@ -1,6 +1,8 @@
 package sample.model;
 
 import java.io.Serializable;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -9,6 +11,8 @@ public class Jogador implements Serializable{
     private String nome;
     private int maiorPontuacao;
     private Date ultimaJogada;
+
+    DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
     public Jogador(int codigo, String nome, int maiorPontuacao, Date ultimaJogada) {
         this.codigo = codigo;

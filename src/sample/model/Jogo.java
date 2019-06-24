@@ -22,6 +22,7 @@ public class Jogo extends Avisos {
     private ObservableList<Pergunta> perguntas;
     private Jogador jogadorLogado;
     private int pontuacao = 0;
+    private String dificuldade;
 
 
     private static Jogo instance = new Jogo();
@@ -32,7 +33,15 @@ public class Jogo extends Avisos {
             jogadorLogado.setMaiorPontuacao(pontuacao);
         }
 
-        Date ultimaJogada = Jogo.getInstance().getJogadorLogado().getUltimaJogada();
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Date ultimaJogada = new Date();
+
+        for (Jogador j:jogadores) {
+            if(j.equals(jogadorLogado)){
+                j.setUltimaJogada(ultimaJogada);
+            }
+        }
+
         jogadorLogado.setUltimaJogada(ultimaJogada);
         pontuacao = 0;
 
@@ -48,6 +57,22 @@ public class Jogo extends Avisos {
 
     public Jogador getJogadorLogado() {
         return jogadorLogado;
+    }
+
+    public int getDificuldade(){
+        if(dificuldade.equals("Dificíl")){
+            return 1;
+        }
+        else if(dificuldade.equals("Médio")){
+            return 2;
+        }
+        else{
+            return 3;
+        }
+    }
+
+    public void setDificuldade(String dificuldade) {
+        this.dificuldade = dificuldade;
     }
 
     public void setJogadorLogado(Jogador jogadorLogado) {
@@ -118,7 +143,7 @@ public class Jogo extends Avisos {
                 }
 
 
-            }while(perguntas.size()<8);
+            }while(perguntas.size()<7);
             System.out.println(perguntas);
         }
         catch (IOException e){

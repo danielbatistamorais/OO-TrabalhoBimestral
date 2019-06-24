@@ -47,6 +47,7 @@ public class MenuJogo extends Avisos {
             ErroDificuldade();
         }
         else{
+            Jogo.getInstance().setDificuldade(dificuldade);
             Navegador.loadJanela(Navegador.TELA_JOGO);
         }
     }

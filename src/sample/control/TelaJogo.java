@@ -21,6 +21,8 @@ public class TelaJogo  extends Avisos{
 
     private int cont = 0;
     private int questoesRespondidas =0;
+    private int limitePulos;
+    private int qtdPulos;
 
     @FXML
     private Label lbPergunta;
@@ -46,6 +48,7 @@ public class TelaJogo  extends Avisos{
             e.printStackTrace();
         }
 
+        qtdPulos = Jogo.getInstance().getDificuldade();
         carregaTela(perguntas.get(cont));
     }
 
@@ -73,11 +76,25 @@ public class TelaJogo  extends Avisos{
         }
     }
 
-    public void acaoPular(ActionEvent actionEvent) {
-        cont++;
-        carregaTela(perguntas.get(cont));
+    @FXML
+    public void acaoDesistir(ActionEvent actionEvent){
+        Navegador.loadJanela(Navegador.MENU_JOGO);
     }
 
+    @FXML
+    public void acaoPular(ActionEvent actionEvent) {
+
+        if(qtdPulos > 0){
+            cont++;
+            qtdPulos--;
+            carregaTela(perguntas.get(cont));
+        }
+        else{
+            avisoPulos();
+        }
+    }
+
+    @FXML
     public void acaoConfirmar(ActionEvent actionEvent) {
         if(selecionaResposta() == perguntas.get(cont).getCorreta()){
             Jogo.getInstance().marcaPontos(1);
@@ -88,9 +105,9 @@ public class TelaJogo  extends Avisos{
         }
 
         cont++;
+        questoesRespondidas++;
 
         if(questoesRespondidas <5){
-            questoesRespondidas++;
             carregaTela(perguntas.get(cont));
         }
         else{

@@ -30,7 +30,10 @@
             <ToggleGroup fx:id="rbOpcoes" />
         </fx:define>
 
-        <RadioButton fx:id="rbOpcaoA" layoutX="24.0" layoutY="161.0" toggleGroup="$colorToggleGroup"/>
+        <RadioButton fx:id="rbOpcaoA" layoutX="24.0" layoutY="161.0">
+         <toggleGroup>
+            <ToggleGroup fx:id="colorToggleGroup" />
+         </toggleGroup></RadioButton>
         <RadioButton fx:id="rbOpcaoB" layoutX="24.0" layoutY="205.0" toggleGroup="$colorToggleGroup" />
         <RadioButton fx:id="rbOpcaoC" layoutX="24.0" layoutY="257.0" toggleGroup="$colorToggleGroup" />
         <RadioButton fx:id="rbOpcaoD" layoutX="24.0" layoutY="308.0" toggleGroup="$colorToggleGroup" />
@@ -44,7 +47,7 @@
          <font>
             <Font size="15.0" />
          </font></Button>
-        <Button layoutX="376.0" layoutY="345.0" mnemonicParsing="false" onAction="#acaoConfirmar" prefHeight="41.0" prefWidth="101.0" text="Desistir" textFill="RED">
+        <Button fx:id="acaoDesistir" layoutX="376.0" layoutY="345.0" mnemonicParsing="false" onAction="#acaoDesistir" prefHeight="41.0" prefWidth="101.0" text="Desistir" textFill="RED">
          <font>
             <Font size="18.0" />
          </font></Button>

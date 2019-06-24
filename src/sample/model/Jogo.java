@@ -192,11 +192,11 @@ public class Jogo extends Avisos {
     public void marcaPontos(int verifica){
         if(verifica == 1){
             pontuacao = pontuacao+3;
-            avisoAcerto();
+
         }
         else if(verifica == 2){
             pontuacao = pontuacao-1;
-            avisoErro();
+
         }
     }
 

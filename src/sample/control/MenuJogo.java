@@ -30,7 +30,7 @@ public class MenuJogo extends Avisos {
         DateFormat ultimaJogada = new SimpleDateFormat("dd/MM/yyyy");
         Date data = Jogo.getInstance().getJogadorLogado().getUltimaJogada();
 
-        if(ultimaJogada == null){
+        if(data == null){
             lbUltimaJogada.setText("00/00/0000");
         }
         else{

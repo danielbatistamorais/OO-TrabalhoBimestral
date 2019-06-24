@@ -101,10 +101,11 @@ public class TelaJogo  extends Avisos{
         if(rbOpcaoA.isSelected() || rbOpcaoB.isSelected()|| rbOpcaoC.isSelected() || rbOpcaoD.isSelected()){
             if(selecionaResposta() == perguntas.get(cont).getCorreta()){
                 Jogo.getInstance().marcaPontos(1);
-
+                avisoAcerto();
             }
             else if(selecionaResposta() != perguntas.get(cont).getCorreta()){
                 Jogo.getInstance().marcaPontos(2);
+                avisoErro();
             }
             cont++;
             questoesRespondidas++;

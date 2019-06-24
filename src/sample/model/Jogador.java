@@ -6,7 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
-public class Jogador implements Serializable{
+public class Jogador implements Serializable {
     private int codigo;
     private String nome;
     private int maiorPontuacao;
@@ -56,11 +56,9 @@ public class Jogador implements Serializable{
 
     @Override
     public String toString() {
-        return "Jogador{" +
-                "codigo=" + codigo +
-                ", nome='" + nome + '\'' +
-                ", maiorPontuacao=" + maiorPontuacao +
-                ", ultimaJogada=" + ultimaJogada +
-                '}';
+        return nome +"\t\t"+
+                maiorPontuacao;
     }
+
+
 }

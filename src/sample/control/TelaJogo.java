@@ -11,6 +11,7 @@ import sample.Navegador;
 import sample.model.Jogo;
 import sample.model.Pergunta;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
@@ -95,7 +96,7 @@ public class TelaJogo  extends Avisos{
     }
 
     @FXML
-    public void acaoConfirmar(ActionEvent actionEvent) {
+    public void acaoConfirmar(ActionEvent actionEvent){
         if(selecionaResposta() == perguntas.get(cont).getCorreta()){
             Jogo.getInstance().marcaPontos(1);
 
@@ -103,7 +104,6 @@ public class TelaJogo  extends Avisos{
         else if(selecionaResposta() != perguntas.get(cont).getCorreta()){
             Jogo.getInstance().marcaPontos(2);
         }
-
         cont++;
         questoesRespondidas++;
 

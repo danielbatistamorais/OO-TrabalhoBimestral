@@ -4,7 +4,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import sample.Navegador;
+import sample.model.Jogador;
 import sample.model.Jogo;
 
 import java.io.IOException;
@@ -20,6 +22,10 @@ public class MenuJogo extends Avisos {
     @FXML
     private Label lbUltimaJogada;
 
+    @FXML
+    private ListView<Jogador> ltvRanking;
+
+
     public void initialize(){
         DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         Date ultimaJogada = Jogo.getInstance().getJogadorLogado().getUltimaJogada();
@@ -30,6 +36,7 @@ public class MenuJogo extends Avisos {
         else{
             lbUltimaJogada.setText(String.valueOf(ultimaJogada));
         }
+        ltvRanking.getItems().addAll(Jogo.getInstance().getJogador());
     }
 
     @FXML

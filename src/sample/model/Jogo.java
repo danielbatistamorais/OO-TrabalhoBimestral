@@ -2,6 +2,7 @@ package sample.model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
 import java.util.Random;
 import javafx.collections.FXCollections;
@@ -206,5 +207,11 @@ public class Jogo extends Avisos {
         }
 
         return false;
+    }
+
+
+    public ObservableList<Jogador> getJogador(){
+
+        return FXCollections.unmodifiableObservableList(jogadores);
     }
 }

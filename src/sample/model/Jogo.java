@@ -28,7 +28,7 @@ public class Jogo extends Avisos {
 
     private static Jogo instance = new Jogo();
 
-    public void  finalizaPartida() {
+    public void  finalizaPartida() throws IOException{
 
         if(jogadorLogado.getMaiorPontuacao() < pontuacao){
             jogadorLogado.setMaiorPontuacao(pontuacao);
@@ -45,6 +45,8 @@ public class Jogo extends Avisos {
 
         jogadorLogado.setUltimaJogada(ultimaJogada);
         pontuacao = 0;
+
+        salvarJogadores();
 
     }
 
@@ -144,7 +146,7 @@ public class Jogo extends Avisos {
                 }
 
 
-            }while(perguntas.size()<7);
+            }while(perguntas.size()<8);
             System.out.println(perguntas);
         }
         catch (IOException e){

@@ -96,7 +96,7 @@ public class TelaJogo  extends Avisos{
     }
 
     @FXML
-    public void acaoConfirmar(ActionEvent actionEvent){
+    public void acaoConfirmar(ActionEvent actionEvent) throws IOException{
         if(selecionaResposta() == perguntas.get(cont).getCorreta()){
             Jogo.getInstance().marcaPontos(1);
 

@@ -7,12 +7,14 @@ import sample.model.Jogador;
 import javafx.scene.control.TextField;
 import sample.model.Jogo;
 
+import java.io.IOException;
+
 public class TelaInicial {
     @FXML
     private TextField tfNome;
 
     @FXML
-    private void acaoCadastrar(){
+    private void acaoCadastrar() throws IOException{
         String nome = tfNome.getText();
 
         if(nome.length() > 0 ){
@@ -21,6 +23,7 @@ public class TelaInicial {
 
                 Jogador jogador = new Jogador(0, nome, 0, null);
                 Jogo.getInstance().cadastrarJogador(jogador);
+                Jogo.getInstance().salvarJogadores();
 
                 Navegador.loadJanela(Navegador.MENU_JOGO);
             }
@@ -30,6 +33,7 @@ public class TelaInicial {
 
         }
         else{
+            Jogo.getInstance().salvarJogadores();
             Navegador.loadJanela(Navegador.JANELA_INICIAL);
         }
     }

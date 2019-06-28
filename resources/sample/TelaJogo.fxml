@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
+<?import javafx.scene.layout.VBox?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="root" stylesheets="/css/base.css" xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.control.TelaJogo">
     <children>
         <Label layoutX="200.0" layoutY="32.0" text="QUIZZ" textFill="#ff6868">
@@ -29,7 +30,7 @@
             <ToggleGroup fx:id="colorToggleGroup" />
             <ToggleGroup fx:id="rbOpcoes" />
         </fx:define>
-
+        <!-- <VBox fx:id="op"></VBox> -->
         <RadioButton fx:id="rbOpcaoA" layoutX="24.0" layoutY="161.0">
          <toggleGroup>
             <ToggleGroup fx:id="colorToggleGroup" />

@@ -6,6 +6,7 @@ import javafx.collections.ObservableSet;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.fxml.FXML;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import sample.Navegador;
 import sample.model.Jogo;
@@ -40,6 +41,11 @@ public class TelaJogo  extends Avisos{
     @FXML
     private RadioButton rbOpcaoD;
 
+    //@FXML
+    //private ToggleGroup rbOpcoes;
+
+    /*@FXML
+    private VBox op;*/
 
     public void initialize(){
         try{
@@ -54,6 +60,15 @@ public class TelaJogo  extends Avisos{
     }
 
     private void carregaTela(Pergunta p) {
+        /*for(int i = 0; i < p.getOpcoes().size(); i++){
+            RadioButton rb = new RadioButton();
+            rb.setId("rb-" + i);
+            rb.setText(p.getOpcoes().get(i));
+            rb.setLayoutY(161);
+            rb.setLayoutX(24);
+            rb.setToggleGroup(rbOpcoes);
+            op.getChildren().add(rb);
+        }*/
 
         lbPergunta.setText(p.getEnunciado());
         rbOpcaoA.setText(p.getOpcoes().get(0));
@@ -63,6 +78,7 @@ public class TelaJogo  extends Avisos{
     }
 
     private int selecionaResposta(){
+        //RadioButton rbS = (RadioButton) rbOpcoes.getSelectedToggle();
         if(rbOpcaoA.isSelected()){
             return 1;
         }

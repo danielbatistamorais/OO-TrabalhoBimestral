@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Jogo extends Avisos {
 
     private static String FILE="jogadores.bin";
-    private static String FILE_PERGUNTAS="Geografia.txt";
+    private static String FILE_PERGUNTAS="perguntas.txt";
 
     private ObservableList<Jogador> jogadores;
     private ObservableList<Pergunta> perguntas;

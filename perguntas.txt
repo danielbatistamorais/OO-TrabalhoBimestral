@@ -1,14 +1,92 @@
+15
+4
+Quais o menor e o maior país do mundo?
+Vaticano e Rússia
+Nauru e China
+Mônaco e Rússia
+Malta e Estados Unidos
+1
+Qual desses Países não é Europeu?
+Macedonia
+Espanha
+Grecia
+Casaquistão
+4
+Além da Turquia, qual outro país está presente em dois continentes?
+Rússia
+Iraque
+Irã
+Polonia
+1
+Em qual local da Ásia o português é língua oficial?
+Índia
+Filipinas
+Moçambique
+Macau
+4
+Qual os rios que compõem a América do Sul?
+Amazonas, Paraná e São Francisco
+Amazonas, Mississipi e Tocantins
+Tocantins, São Francisco e Maranhão
+São Francisco, Amazonas e Paraná
+1
+Quais os climas de EUA e Canadá?
+Totalmente Desertico
+Temperado, Frio Polar e Frio
+Equatorial Umido, Amazonas e Tropical
+Quase Polar, Frio
 2
-4
-Quanto é 2 + 2?
+Qual o Canal mais famoso da América Central?
+Canal do Panamá
+Canal do Rio Amazonas
+Canal do Rio Tietê
+Canal do Rio Paraguai
 1
+Qual país fica no continente Americano?
+Nova Zelãndia
+Jamaica
+Micronésia
+Fiji
 2
+Qual país era da União Soviética?
+Coreia do Norte
+Brasil
+Mongólia
+Ucrânia
+4
+Qual a capital do Canadá?
+Toronto
+Gatineau
+Ottawa
+Calgary
 3
-4
-4
-Quanto é 2 - 2?
-0
+Qual é os 3 destinos mais visitados do mundo?
+França, Estados Unidos, Espanha
+Estados Unidos, Índia, Austrália
+Turquia, Estados Unidos, México
+Brasil, Estados Unidos, Portugal
 1
-3
+Qual é o menor Continente?
+Europa
+Africa
+Australia
+Oceania
 4
+Onde a Nova Zelandia se Localiza?
+Ocidente - Oceania
+Ocidente - África
+Oriente - África
+Oriente - Oceania
+4
+Quais países se localizam na América Anglo-Saxônica?
+EUA e Canadá
+Canadá, EUA e México
+Canadá e México
+Guatemala, México e Canadá
 1
+Qual o maior Rio do Brasil?
+Rio São Francisco
+Rio Paraná
+Rio Tietê
+Rio Amazonas
+4
